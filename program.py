@@ -10,11 +10,11 @@ class Twitter():
 
 	def login(self):
 		write_email = self.driver.find_element_by_class_name("js-username-field")
-		write_email.send_keys("") # Email de Login do Twitter
+		write_email.send_keys("henriquemicroweb@gmail.com") # Email de Login do Twitter
 
 		write_pass = self.driver.find_element_by_class_name("js-password-field")
 
-		write_pass.send_keys("") # Senha de Acesso do Twitter
+		write_pass.send_keys("#BolsoMito2018#") # Senha de Acesso do Twitter
 
 		write_pass.send_keys(Keys.RETURN)
 
@@ -25,7 +25,7 @@ class Twitter():
 		news = [soup.find(class_="feed-post-link")]
 
 		for show_news in news:
-			text = (str(show_news.contents[0]) + "\n" + str(show_news.get("href")))
+			text = (str(show_news.contents[0]) + "\n" + str(show_news.get("href")) + "\n" + str("Selenium and Twitter"))
 
 		return text
 
